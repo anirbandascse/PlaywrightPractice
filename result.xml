@@ -1,0 +1,46 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="3.0636710000000003">
+<testsuite name="12.Grouping.spec.js" timestamp="2026-08-16T10:19:00.963Z" hostname="" tests="4" failures="0" skipped="0" time="1.76" errors="0">
+<testcase name="Group 1 › Test Case 1" classname="12.Grouping.spec.js" time="0.643">
+<system-out>
+<![CDATA[Before All hook....
+Before Each hook....
+Test Case 1
+After Each hook....
+
+[[ATTACHMENT|test-results\12.Grouping-Group-1-Test-Case-1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Group 1 › Test Case 2" classname="12.Grouping.spec.js" time="0.378">
+<system-out>
+<![CDATA[Before Each hook....
+Test Case 2
+After Each hook....
+
+[[ATTACHMENT|test-results\12.Grouping-Group-1-Test-Case-2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Group 2 › Test Case 3" classname="12.Grouping.spec.js" time="0.38">
+<system-out>
+<![CDATA[Before Each hook....
+Test Case 3
+After Each hook....
+
+[[ATTACHMENT|test-results\12.Grouping-Group-2-Test-Case-3\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Group 2 › Test Case 4" classname="12.Grouping.spec.js" time="0.359">
+<system-out>
+<![CDATA[Before Each hook....
+Test Case 4
+After Each hook....
+After All hook....
+
+[[ATTACHMENT|test-results\12.Grouping-Group-2-Test-Case-4\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

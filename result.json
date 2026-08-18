@@ -1,0 +1,319 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\PlaywrightPractice\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/12.Grouping.spec.js"
+    ],
+    "configFile": "C:\\PlaywrightPractice\\playwright.config.js",
+    "rootDir": "C:/PlaywrightPractice/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/PlaywrightPractice/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/PlaywrightPractice/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        null
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "result.xml"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "result.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 7,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "12.Grouping.spec.js",
+      "file": "12.Grouping.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Group 1",
+          "file": "12.Grouping.spec.js",
+          "line": 21,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Test Case 1",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 643,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Before All hook....\n"
+                        },
+                        {
+                          "text": "Before Each hook....\n"
+                        },
+                        {
+                          "text": "Test Case 1\n"
+                        },
+                        {
+                          "text": "After Each hook....\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T10:19:01.424Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\PlaywrightPractice\\test-results\\12.Grouping-Group-1-Test-Case-1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "73572b41af3f8caed92d-602988dd1aead418129e",
+              "file": "12.Grouping.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "Test Case 2",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 378,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Before Each hook....\n"
+                        },
+                        {
+                          "text": "Test Case 2\n"
+                        },
+                        {
+                          "text": "After Each hook....\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T10:19:02.486Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\PlaywrightPractice\\test-results\\12.Grouping-Group-1-Test-Case-2\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "73572b41af3f8caed92d-a4c3dbf7a9fdefef60e4",
+              "file": "12.Grouping.spec.js",
+              "line": 29,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Group 2",
+          "file": "12.Grouping.spec.js",
+          "line": 36,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Test Case 3",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 380,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Before Each hook....\n"
+                        },
+                        {
+                          "text": "Test Case 3\n"
+                        },
+                        {
+                          "text": "After Each hook....\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T10:19:02.904Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\PlaywrightPractice\\test-results\\12.Grouping-Group-2-Test-Case-3\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "73572b41af3f8caed92d-2348211eecd1f4affde0",
+              "file": "12.Grouping.spec.js",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "Test Case 4",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 359,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Before Each hook....\n"
+                        },
+                        {
+                          "text": "Test Case 4\n"
+                        },
+                        {
+                          "text": "After Each hook....\n"
+                        },
+                        {
+                          "text": "After All hook....\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-16T10:19:03.328Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\PlaywrightPractice\\test-results\\12.Grouping-Group-2-Test-Case-4\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "73572b41af3f8caed92d-a73531a64bac22db6d61",
+              "file": "12.Grouping.spec.js",
+              "line": 44,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-16T10:19:00.917Z",
+    "duration": 3063.6710000000003,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
