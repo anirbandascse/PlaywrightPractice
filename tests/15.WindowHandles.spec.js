@@ -25,7 +25,7 @@ test('Open new single tab after clicking link', async({ browser }) => {
 
   /*
    1. To move focus in tabbed window or new window , we need to use EVENT LISTENER and BROWSER CONTEXT.
-   2.  EVENT LISTENER cannot be put before the click as the event of opening the page on clicking has not happned.
+   2.  EVENT LISTENER cannot be put before the click as the event of opening the page on clicking has not happened.
    3.  EVENT LISTENER cannot be put after the click has happened.What will it listen to as the event has already happened.
    4. The  EVENT LISTENER and the action of click which performs the event has to happen in parallel. 
    5. Right now thw JS has been made synchronous using ASYNC -AWAIT.
