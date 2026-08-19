@@ -70,3 +70,78 @@ test('Open new single tab after clicking link', async({ browser }) => {
   console.log(await page.locator("#username").inputValue()); //This will return as this will check for input value
 
 });
+
+
+// test('Handle multiple concurrent pop-ups', async ({ page }) => {
+//   await page.goto('https://example.com');
+
+//   // 1. Set up listeners for multiple incoming pop-ups BEFORE clicking
+//   const popup1Promise = page.waitForEvent('popup');
+//   const popup2Promise = page.waitForEvent('popup');
+
+//   // 2. Trigger the action that opens both windows at once
+//   await page.getByRole('button', { name: 'Launch All Dashboards' }).click();
+
+//   // 3. Resolve both promises concurrently
+//   const [popup1, popup2] = await Promise.all([
+//     popup1Promise,
+//     popup2Promise
+//   ]);
+
+//   // 4. Capture details to identify which window is which
+//   const title1 = await popup1.title();
+//   const title2 = await popup2.title();
+
+//   console.log(`Pop-up 1 Title: ${title1}`);
+//   console.log(`Pop-up 2 Title: ${title2}`);
+
+//   // 5. Route interactions to the correct window based on title/URL
+//   if (title1.includes('Analytics')) {
+//     await popup1.bringToFront(); // Optional: bring to visual focus
+//     await popup1.getByRole('button', { name: 'Download Report' }).click();
+    
+//     // Switch to the other window in the background
+//     await popup2.getByPlaceholder('Enter Notes').fill('Analytics looked good.');
+//   } else {
+//     await popup2.bringToFront();
+//     await popup2.getByRole('button', { name: 'Download Report' }).click();
+    
+//     await popup1.getByPlaceholder('Enter Notes').fill('Analytics looked good.');
+//   }
+
+//   // 6. Clean up: close pop-ups to free up resources
+//   await popup1.close();
+//   await popup2.close();
+// });
+
+
+
+// test('Handle dynamic number of pop-ups', async ({ context, page }) => {
+//   await page.goto('https://example.com');
+
+//   // Track the initial pages in the context
+//   const baselinePagesCount = context.pages().length;
+
+//   // Trigger the multi-window launch
+//   await page.getByRole('button', { name: 'Open All Alerts' }).click();
+
+//   // Wait for the total pages in the context to stabilize (e.g., expecting 3 windows total)
+//   await expect.poll(() => context.pages().length).toBeGreaterThan(baselinePagesCount);
+
+//   // Retrieve all windows now inside the context
+//   const activeWindows = context.pages();
+
+//   // Loop through and handle each window dynamically
+//   for (const win of activeWindows) {
+//     // Skip the main page where we started the test
+//     if (win === page) continue;
+
+//     const currentUrl = win.url();
+    
+//     // Perform targeted operations depending on the pop-up destination
+//     if (currentUrl.includes('error-logs')) {
+//       await win.locator('#ack-button').click();
+//       await win.close(); // Close immediately after acting
+//     }
+//   }
+// });

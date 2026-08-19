@@ -20,3 +20,5 @@ Interactive UI mode:                        npx playwright test --ui
 To run Codegen:                             npx playwright codegen (add --help at the end to check all commands)
 To create a new spec file from CLI          npx playwright codegen -o tests/nameOfTheTestCase.spec.js
 Open in iPhone                              npx playwright codegen --device "iPhone 13"
+
+Sharding                                    npx test playwright --shard=x/4

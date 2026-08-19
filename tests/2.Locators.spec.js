@@ -50,7 +50,7 @@ test.only('Locating element using Playwright specific locators', async ({ page }
   const profileName = await page.locator(".oxd-userdropdown-tab").textContent();
   await expect(page.getByText(profileName)).toBeVisible();
 
-  //getByLable()
+  //getByLabel()
   //getByTitle()
   //getByTestId()
 
