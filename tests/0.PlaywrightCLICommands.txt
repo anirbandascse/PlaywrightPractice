@@ -13,6 +13,8 @@ Run in Headed mode:                         npx playwright test tests/testName.s
 Run a group of test                         npx playwright test --grep @TagName
 To run only one tag                         npx playwright test tests/14.Tags.spec.js --grep @smoke --grep-invert @regression
 
+Mobile view                                 npx playwright test tests/testName.spec.js --project="iPhone 15 Pro Max"
+
 Trace view:                                 npx playwright show-trace trace.zip
 
 Interactive UI mode:                        npx playwright test --ui
