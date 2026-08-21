@@ -43,12 +43,14 @@ test.only('Locating element using Playwright specific locators', async ({ page }
   await page.getByPlaceholder("Password").fill("admin123");
 
   //<button data-v-10d463b7="" data-v-0af708be="" type="submit" class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"><!----> Login <!----></button>
-  await page.getByRole('button', {type:'submit'}).click();
+  await page.getByRole('button', { name : 'Login'}).click();
 
   //<span data-v-bdd6d943="" class="oxd-userdropdown-tab"><img data-v-bdd6d943="" alt="profile picture" class="oxd-userdropdown-img" src="/web/index.php/pim/viewPhoto/empNumber/7"><p data-v-bdd6d943="" class="oxd-userdropdown-name">Paulo Pontes</p><i data-v-bddebfba="" data-v-bdd6d943="" class="oxd-icon bi-caret-down-fill oxd-userdropdown-icon"></i></span>
 
-  const profileName = await page.locator(".oxd-userdropdown-tab").textContent();
-  await expect(page.getByText(profileName)).toBeVisible();
+  const profileName = await page.locator(".oxd-userdropdown-tab p").textContent();
+  console.log(profileName);
+  //await page.pause();
+  await expect(page.locator(".oxd-userdropdown-tab p")).toContainText(`${profileName}`);
 
   //getByLabel()
   //getByTitle()
