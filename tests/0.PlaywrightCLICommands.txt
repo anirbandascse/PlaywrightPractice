@@ -4,23 +4,24 @@ Playwright CLI Commands
 To install Playwright:                      npm init playwright@latest
 Version check:                              npm playwright -v
 Run test:                                   npx playwright test
+Run spec files one by one:                  npx playwright test --workers=1
 Run particular test file:                   npx playwright test tests/testName.spec.js
 Run by a test title:                        npx playwright test -g "Title of the test case"
 Playwright Inspector(Debug mode):           npx playwright test tests/testName.spec.js --debug
 See HTML report:                            npx playwright show-report
 Run in Chrome browser:                      npx playwright test tests/testName.spec.js --project=chromium
 Run in Headed mode:                         npx playwright test tests/testName.spec.js --project=chromium --headed
-Run a group of test                         npx playwright test --grep @TagName
-To run only one tag                         npx playwright test tests/14.Tags.spec.js --grep @smoke --grep-invert @regression
+Run a group of test:                        npx playwright test --grep @TagName
+To run only one tag:                        npx playwright test tests/14.Tags.spec.js --grep @smoke --grep-invert @regression
 
-Mobile view                                 npx playwright test tests/testName.spec.js --project="iPhone 15 Pro Max"
+Mobile view:                                npx playwright test tests/testName.spec.js --project="iPhone 15 Pro Max"
 
 Trace view:                                 npx playwright show-trace trace.zip
 
 Interactive UI mode:                        npx playwright test --ui
 
 To run Codegen:                             npx playwright codegen (add --help at the end to check all commands)
-To create a new spec file from CLI          npx playwright codegen -o tests/nameOfTheTestCase.spec.js
-Open in iPhone                              npx playwright codegen --device "iPhone 13"
+To create a new spec file from CLI:         npx playwright codegen -o tests/nameOfTheTestCase.spec.js
+Open in iPhone:                             npx playwright codegen --device "iPhone 13"
 
-Sharding                                    npx test playwright --shard=x/4
+Sharding:                                   npx test playwright --shard=x/4

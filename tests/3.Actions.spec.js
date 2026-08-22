@@ -8,9 +8,8 @@ test('Action on textbox', async ({ page }) => {
   expect(await page.locator("#name").isVisible()).toBeTruthy();
   await page.locator("#name").fill("abc");
 
-
-
   });
+
 
 test('Action on radio button', async ({ page }) => {
 
@@ -70,10 +69,11 @@ test('Action on dropdown', async ({ page }) => {
 
   //await page.locator("#country", 'India');
 
-  //Collect all the dropdown values
+  //Get count
   const dropdownValueCount = page.locator("#country>option");
   await expect(dropdownValueCount).toHaveCount(10);
 
+  //Collect all the dropdown values
   const dropdownTexts = await page.locator("#country>option").allTextContents();
 
   for(let value of dropdownTexts){
@@ -100,7 +100,6 @@ test('Action on multi select dropdown', async ({ page }) => {
 
   await page.waitForTimeout(5000);
 
-
   });
 
 test.only('Action on auto complete select dropdown', async ({ page }) => {
@@ -116,4 +115,3 @@ test.only('Action on auto complete select dropdown', async ({ page }) => {
   await page.waitForTimeout(5000);
   
 });
-
