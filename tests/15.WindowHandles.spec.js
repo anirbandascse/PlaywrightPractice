@@ -11,6 +11,7 @@ test('Open two different sites in two different tabs', async({ browser }) => {
 
   await page1.goto("https://facebook.com/");
   await page2.goto("https://twitter.com/");
+  //No need to switch tabs in Playwright, we can use page1 or page2 to perform actions in tabs
 
 });
 
@@ -20,8 +21,8 @@ test('Open new single tab after clicking link', async({ browser }) => {
 
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
   await expect(page.locator("[href*='documents-request']")).toHaveAttribute("class","blinkingText");
-  //await page.pause();
-  await page.locator("[href*='documents-request']").click();
+
+  //await page.locator("[href*='documents-request']").click();
 
   /*
    1. To move focus in tabbed window or new window , we need to use EVENT LISTENER and BROWSER CONTEXT.
@@ -71,77 +72,24 @@ test('Open new single tab after clicking link', async({ browser }) => {
 
 });
 
+test('Open multiple tabs after clicking link', async({ browser }) => {
+  const context = await browser.newContext();
+  const page = await context.newPage();
 
-// test('Handle multiple concurrent pop-ups', async ({ page }) => {
-//   await page.goto('https://example.com');
+  await page.goto("https://www.websiteplanet.com/webtools/multiple-url/");
+  await page.locator('#mu-list').fill("facebook.com, twitter.com, gmail.com");
+  await page.locator('.mu-form-button.mu-form-button-submit').click();
 
-//   // 1. Set up listeners for multiple incoming pop-ups BEFORE clicking
-//   const popup1Promise = page.waitForEvent('popup');
-//   const popup2Promise = page.waitForEvent('popup');
+  await page.waitForTimeout(5000);
 
-//   // 2. Trigger the action that opens both windows at once
-//   await page.getByRole('button', { name: 'Launch All Dashboards' }).click();
+  const allTabs = context.pages();
 
-//   // 3. Resolve both promises concurrently
-//   const [popup1, popup2] = await Promise.all([
-//     popup1Promise,
-//     popup2Promise
-//   ]);
+  for(const tab of allTabs){
+    if((await tab.title()).includes('Facebook')){
+      await tab.bringToFront();
+      await page.waitForTimeout(5000);
+      break;
+    }
+  }
 
-//   // 4. Capture details to identify which window is which
-//   const title1 = await popup1.title();
-//   const title2 = await popup2.title();
-
-//   console.log(`Pop-up 1 Title: ${title1}`);
-//   console.log(`Pop-up 2 Title: ${title2}`);
-
-//   // 5. Route interactions to the correct window based on title/URL
-//   if (title1.includes('Analytics')) {
-//     await popup1.bringToFront(); // Optional: bring to visual focus
-//     await popup1.getByRole('button', { name: 'Download Report' }).click();
-    
-//     // Switch to the other window in the background
-//     await popup2.getByPlaceholder('Enter Notes').fill('Analytics looked good.');
-//   } else {
-//     await popup2.bringToFront();
-//     await popup2.getByRole('button', { name: 'Download Report' }).click();
-    
-//     await popup1.getByPlaceholder('Enter Notes').fill('Analytics looked good.');
-//   }
-
-//   // 6. Clean up: close pop-ups to free up resources
-//   await popup1.close();
-//   await popup2.close();
-// });
-
-
-
-// test('Handle dynamic number of pop-ups', async ({ context, page }) => {
-//   await page.goto('https://example.com');
-
-//   // Track the initial pages in the context
-//   const baselinePagesCount = context.pages().length;
-
-//   // Trigger the multi-window launch
-//   await page.getByRole('button', { name: 'Open All Alerts' }).click();
-
-//   // Wait for the total pages in the context to stabilize (e.g., expecting 3 windows total)
-//   await expect.poll(() => context.pages().length).toBeGreaterThan(baselinePagesCount);
-
-//   // Retrieve all windows now inside the context
-//   const activeWindows = context.pages();
-
-//   // Loop through and handle each window dynamically
-//   for (const win of activeWindows) {
-//     // Skip the main page where we started the test
-//     if (win === page) continue;
-
-//     const currentUrl = win.url();
-    
-//     // Perform targeted operations depending on the pop-up destination
-//     if (currentUrl.includes('error-logs')) {
-//       await win.locator('#ack-button').click();
-//       await win.close(); // Close immediately after acting
-//     }
-//   }
-// });
+});

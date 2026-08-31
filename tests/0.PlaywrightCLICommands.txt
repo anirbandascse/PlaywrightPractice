@@ -8,6 +8,7 @@ Run spec files one by one:                  npx playwright test --workers=1
 Run particular test file:                   npx playwright test tests/testName.spec.js
 Run by a test title:                        npx playwright test -g "Title of the test case"
 Playwright Inspector(Debug mode):           npx playwright test tests/testName.spec.js --debug
+Rerun with retries:                         npx playwright test tests/testName.spec.js --retries=2
 See HTML report:                            npx playwright show-report
 Run in Chrome browser:                      npx playwright test tests/testName.spec.js --project=chromium
 Run in Headed mode:                         npx playwright test tests/testName.spec.js --project=chromium --headed
@@ -25,3 +26,8 @@ To create a new spec file from CLI:         npx playwright codegen -o tests/name
 Open in iPhone:                             npx playwright codegen --device "iPhone 13"
 
 Sharding:                                   npx test playwright --shard=x/4
+
+
+Allure report install:                      npm install -D allure-playwright //In playwright.config.js - reporter: [['html'], ['allure-playwright']],
+Convert JSON Allure to Human Redable:       npx allure generate allure-results // After execution
+Open Allure report:                         npx allure open allure-results
